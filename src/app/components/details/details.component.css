@@ -1,0 +1,49 @@
+.anime-image {
+  text-align: center;
+}
+
+.anime-image img {
+  height: 16em;
+}
+
+.anime-synopsis {
+  text-align: justify;
+}
+
+.h-100 {
+  text-align: center;
+}
+
+.subtitle {
+  background: #007bff;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.character-image {
+  text-align: center;
+}
+
+.character-image img {
+  height: 200px;
+}
+
+.subtitle-text {
+  text-align: left;
+  display: inline-block;
+  width: 85%;
+}
+
+.see-more {
+  text-align: center;
+  display: inline-block;
+  width: 15%;
+  color: white;
+  text-decoration: none;
+}
+
+.episode {
+  border: 1px solid #007bff;
+  border-radius: 5px;
+}

@@ -1,0 +1,18 @@
+<h1 class="page-title">Search results</h1>
+<div class="row">
+  <div *ngFor="let result of searchResults" class="col-md-3 col-sm-12">
+    <div class="anime h-100">
+      <h4 class="title">{{ result.title }}</h4>
+      <div class="anime-image">
+        <img src="{{ result.image_url }}" alt="" />
+      </div>
+      <p>Episodes : {{ result.episodes }}</p>
+      <a
+        class="btn btn-primary"
+        [routerLink]="['/anime', result.mal_id]"
+        routerLinkActive="router-link-active"
+        >More Info</a
+      >
+    </div>
+  </div>
+</div>

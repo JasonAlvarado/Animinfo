@@ -1,0 +1,39 @@
+<h1 class="page-title">Top animes (ranked by MyAnimeList.com)</h1>
+<form
+  name="animeSearch"
+  #searchForm="ngForm"
+  class="form-inline my-2 my-lg-0"
+  (ngSubmit)="onSubmit()"
+>
+  <input
+    #name="ngModel"
+    name="name"
+    class="search-input"
+    type="text"
+    placeholder="ex. Haikyuu"
+    aria-label="Search"
+    [(ngModel)]="animeName"
+    required
+  />
+  <button class="btn btn-success" type="submit">
+    Search
+  </button>
+</form>
+<div class="row">
+  <div *ngFor="let item of topAnimes" class="col-sm-12 col-md-3">
+    <div class="card h-100" style="width: 100%;">
+      <img
+        class="card-img-top"
+        src="{{ item.image_url }}"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ item.title }}</h5>
+        <p class="card-text">
+          {{ item.type }}
+        </p>
+        <a href="{{ item.url }}" class="btn btn-primary">See more</a>
+      </div>
+    </div>
+  </div>
+</div>
