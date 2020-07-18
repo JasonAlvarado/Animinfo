@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DetailsComponent } from './components/details/details.component';
 import { SearchComponent } from './components/search/search.component';
 import { AnimeComponent } from './components/anime/anime.component';
+import { MangaComponent } from './components/manga/manga.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AnimeComponent } from './components/anime/anime.component';
     DetailsComponent,
     SearchComponent,
     AnimeComponent,
+    MangaComponent,
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule, routing],
   providers: [],

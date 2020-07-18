@@ -2,22 +2,23 @@
 <form
   name="animeSearch"
   #searchForm="ngForm"
-  class="form-inline my-2 my-lg-0"
+  class="row form"
   (ngSubmit)="onSubmit()"
 >
-  <input
-    #name="ngModel"
-    name="name"
-    class="search-input"
-    type="text"
-    placeholder="ex. Haikyuu"
-    aria-label="Search"
-    [(ngModel)]="animeName"
-    required
-  />
-  <button class="btn btn-success" type="submit">
-    Search
-  </button>
+  <div class="col-md-8">
+    <input
+      #name="ngModel"
+      name="name"
+      class="form-control"
+      type="text"
+      placeholder="Anime name"
+      [(ngModel)]="animeName"
+      required
+    />
+  </div>
+  <div class="col-md-4">
+    <input class="form-control" type="submit" value="Search" />
+  </div>
 </form>
 <div class="row">
   <div *ngFor="let item of topAnimes" class="col-sm-12 col-md-3">
@@ -29,10 +30,14 @@
       />
       <div class="card-body">
         <h5 class="card-title">{{ item.title }}</h5>
-        <p class="card-text">
-          {{ item.type }}
-        </p>
-        <a href="{{ item.url }}" class="btn btn-primary">See more</a>
+        <p class="card-text">{{ item.start_date }} - {{ item.end_date }}</p>
+        <a
+          [routerLink]="['/anime', item.mal_id]"
+          routerLinkActive="router-link-active"
+          class="btn btn-primary"
+          >More info</a
+        >
+        <a href="{{ item.url }}" class="btn btn-primary">My anime list</a>
       </div>
     </div>
   </div>

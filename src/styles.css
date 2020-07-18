@@ -5,45 +5,5 @@
 }
 
 header {
-  background: #007bff;
-}
-
-.page-title {
-  border-bottom: 1px solid #007bff;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 5px;
-}
-
-.col-sm-12,
-.col-md-3,
-.col-md-4 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.anime {
-  padding: 10px;
-  border: 1px solid #007bff;
-  text-align: center;
-  border-radius: 5px;
-}
-
-.anime-title {
-  text-align: center;
-  text-decoration: none;
-}
-
-.anime-image {
-  text-align: center;
-}
-
-.anime-image img {
-  width: 10em;
-}
-
-.search-input {
-  padding: 4px;
-  width: 80%;
+  background: white;
 }
