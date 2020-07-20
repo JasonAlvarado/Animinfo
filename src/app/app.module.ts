@@ -7,19 +7,11 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { DetailsComponent } from './components/details/details.component';
-import { SearchComponent } from './components/search/search.component';
 import { AnimeComponent } from './components/anime/anime.component';
-import { MangaComponent } from './components/manga/manga.component';
+import { SeasonComponent } from './components/season/season.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    DetailsComponent,
-    SearchComponent,
-    AnimeComponent,
-    MangaComponent,
-  ],
+  declarations: [AppComponent, HomeComponent, DetailsComponent, AnimeComponent, SeasonComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule, routing],
   providers: [],
   bootstrap: [AppComponent],

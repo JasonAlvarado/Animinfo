@@ -1,29 +1,37 @@
-import { Top } from './../../models/anime/top';
-import { AnimeService } from './../../services/anime.service';
+import { AnimeSearchRequest } from './../../models/search/animeSearch';
+import { Anime } from './../../models/anime/top';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { AnimeService } from './../../services/anime.service';
+import { SearchService } from './../../services/searchService';
 
 @Component({
   selector: 'app-anime',
   templateUrl: './anime.component.html',
   styleUrls: ['./anime.component.css'],
-  providers: [AnimeService],
+  providers: [AnimeService, SearchService],
 })
 export class AnimeComponent implements OnInit {
-  public topAnimes: Top[];
-  public animeName: string;
+  public animes: Anime[];
+  public types: string[];
+  public status: string[];
 
-  constructor(private animeService: AnimeService, private router: Router) {}
+  public animeRequest: AnimeSearchRequest;
 
-  ngOnInit(): void {
-    this.getTopAnimes();
-    this.animeName = '';
+  constructor(private searchService: SearchService) {
+    this.types = ['tv', 'ova', 'movie', 'special'];
+    this.status = ['airing', 'completed', 'to_be_aired'];
+
+    this.animeRequest = new AnimeSearchRequest('', '', '');
   }
 
-  getTopAnimes() {
-    this.animeService.getTopAnimes().subscribe(
+  ngOnInit(): void {
+    this.searchTopAnimes();
+  }
+
+  searchTopAnimes() {
+    this.searchService.searchTopAnimes().subscribe(
       (response) => {
-        this.topAnimes = response.top;
+        this.animes = response.top.slice(0, 48);
       },
       (error) => {
         console.error(error);
@@ -32,7 +40,13 @@ export class AnimeComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('anime name:' + this.animeName);
-    this.router.navigate(['/search', this.animeName]);
+    this.searchService.searchAnime(this.animeRequest).subscribe(
+      (response) => {
+        this.animes = response.results;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 }

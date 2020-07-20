@@ -1,0 +1,128 @@
+.presentation {
+  height: 350px;
+  text-align: center;
+
+  background: rgba(248, 80, 50, 1);
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(241, 111, 92, 1) 0%,
+    rgba(246, 41, 12, 1) 51%,
+    rgba(240, 47, 23, 1) 71%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(0%, rgba(248, 80, 50, 1)),
+    color-stop(0%, rgba(241, 111, 92, 1)),
+    color-stop(51%, rgba(246, 41, 12, 1)),
+    color-stop(71%, rgba(240, 47, 23, 1)),
+    color-stop(100%, rgba(231, 56, 39, 1))
+  );
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(241, 111, 92, 1) 0%,
+    rgba(246, 41, 12, 1) 51%,
+    rgba(240, 47, 23, 1) 71%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(241, 111, 92, 1) 0%,
+    rgba(246, 41, 12, 1) 51%,
+    rgba(240, 47, 23, 1) 71%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(241, 111, 92, 1) 0%,
+    rgba(246, 41, 12, 1) 51%,
+    rgba(240, 47, 23, 1) 71%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(241, 111, 92, 1) 0%,
+    rgba(246, 41, 12, 1) 51%,
+    rgba(240, 47, 23, 1) 71%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827', GradientType=1 );
+}
+
+.presentation h1 {
+  color: white;
+  text-shadow: 0 0 5px grey;
+  padding-top: 120px;
+  text-align: center;
+}
+
+.presentation a {
+  text-align: center;
+  display: inline-block;
+  font-size: 1em;
+  color: black;
+  text-decoration: none;
+  background: white;
+  padding: 10px 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px grey;
+  width: 16%;
+  margin: 2%;
+  margin-top: 20px;
+}
+
+@media (max-width: 990px) {
+  .presentation {
+    height: 200px;
+    padding-top: 52px;
+  }
+
+  .presentation h1 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .presentation a {
+    text-align: center;
+    width: 46%;
+    margin: 2%;
+  }
+}
+
+.anime-description {
+  margin-top: 20px;
+}
+
+.anime-description p {
+  text-align: justify;
+}
+
+.anime-description h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid tomato;
+  text-align: center;
+}
+
+.anime-description,
+.anime-slider {
+  margin-top: 20px;
+}
+
+.link {
+  text-decoration: none;
+}

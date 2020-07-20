@@ -62,7 +62,7 @@ export class DetailsComponent implements OnInit {
   getEpisodes() {
     this.animeService.getEpisodes(this.animeId).subscribe(
       (response) => {
-        this.episodes = response.episodes.slice(0, 12);
+        this.episodes = response.episodes.slice(0, 5);
       },
       (error) => {
         console.error(error);
@@ -74,7 +74,7 @@ export class DetailsComponent implements OnInit {
     this.animeService.getNews(this.animeId).subscribe(
       (response) => {
         console.log(response);
-        this.articles = response.articles.slice(0, 6);
+        this.articles = response.articles.slice(0, 5);
       },
       (error) => {
         console.error(error);

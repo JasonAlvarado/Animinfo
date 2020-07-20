@@ -1,4 +1,4 @@
-export class Top {
+export class Anime {
   mal_id: number;
   rank: number;
   title: string;

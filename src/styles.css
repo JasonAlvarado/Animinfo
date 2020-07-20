@@ -7,3 +7,9 @@
 header {
   background: white;
 }
+
+.title {
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid tomato;
+}
