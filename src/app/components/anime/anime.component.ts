@@ -12,13 +12,11 @@ import { SearchService } from './../../services/searchService';
 })
 export class AnimeComponent implements OnInit {
   public animes: Anime[];
-  public types: string[];
   public status: string[];
 
   public animeRequest: AnimeSearchRequest;
 
   constructor(private searchService: SearchService) {
-    this.types = ['tv', 'ova', 'movie', 'special'];
     this.status = ['airing', 'completed', 'to_be_aired'];
 
     this.animeRequest = new AnimeSearchRequest('', '', '');
@@ -31,7 +29,7 @@ export class AnimeComponent implements OnInit {
   searchTopAnimes() {
     this.searchService.searchTopAnimes().subscribe(
       (response) => {
-        this.animes = response.top.slice(0, 48);
+        this.animes = response.top;
       },
       (error) => {
         console.error(error);

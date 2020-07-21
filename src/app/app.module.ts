@@ -9,9 +9,14 @@ import { HomeComponent } from './components/home/home.component';
 import { DetailsComponent } from './components/details/details.component';
 import { AnimeComponent } from './components/anime/anime.component';
 import { SeasonComponent } from './components/season/season.component';
+import { AnimeListComponent } from './components/anime-list/anime-list.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ErrorComponent } from './components/error/error.component';
+import { GenreComponent } from './components/genre/genre.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, DetailsComponent, AnimeComponent, SeasonComponent],
+  declarations: [AppComponent, HomeComponent, DetailsComponent, AnimeComponent, SeasonComponent, AnimeListComponent, HeaderComponent, FooterComponent, ErrorComponent, GenreComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule, routing],
   providers: [],
   bootstrap: [AppComponent],

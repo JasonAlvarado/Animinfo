@@ -1,0 +1,43 @@
+<header>
+  <div class="container">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light"> -->
+    <nav class="navbar navbar-light navbar-expand-lg navbar-light">
+      <a class="navbar-brand" [routerLink]="['/home']">Animinfo</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="['/home']"
+              routerLinkActive="router-link-active"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="['/anime']"
+              routerLinkActive="router-link-active"
+              >Anime</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/season']">Season</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>

@@ -1,3 +1,4 @@
+import { Anime } from './../../models/anime/anime';
 import { SearchService } from './../../services/searchService';
 import { SeasonSearch } from './../../models/search/seasonSearch';
 import { Component, OnInit } from '@angular/core';
@@ -9,15 +10,13 @@ import { Component, OnInit } from '@angular/core';
   providers: [SearchService],
 })
 export class SeasonComponent implements OnInit {
-  public year: number;
-  public selectedSeason: string;
   public season: SeasonSearch;
   public seasons: string[];
+  public animes: Anime[];
 
   constructor(private searchService: SearchService) {
     this.seasons = ['summer', 'spring', 'fall', 'winter'];
-    this.year = 2019;
-    this.selectedSeason = 'summer';
+    this.season = new SeasonSearch(2018, 'summer');
   }
 
   ngOnInit(): void {
@@ -25,11 +24,10 @@ export class SeasonComponent implements OnInit {
   }
 
   searchBySeason() {
-    this.season = new SeasonSearch(this.year, this.selectedSeason);
-
     this.searchService.searchSeason(this.season).subscribe(
       (response) => {
-        console.log(response.anime);
+        this.animes = response.anime;
+        console.log(this.animes);
       },
       (error) => {
         console.error(error);

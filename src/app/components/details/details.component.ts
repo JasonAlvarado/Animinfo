@@ -1,11 +1,10 @@
 import { Article } from './../../models/anime/article';
 import { Episode } from './../../models/anime/episodes';
-import { AnimeStaff, Character } from './../../models/anime/animeStaff';
+import { Character } from './../../models/anime/animeStaff';
 import { Anime } from './../../models/anime/anime';
 import { AnimeService } from './../../services/anime.service';
-import { AnimeInfo } from '../../models/anime/animeSearch';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -18,24 +17,23 @@ export class DetailsComponent implements OnInit {
   public anime: Anime;
   public characters: Character[];
   public episodes: Episode[];
-  public articles: Article[];
+  public news: Article[];
 
   constructor(
     private animeService: AnimeService,
-    private router: Router,
     private route: ActivatedRoute
-  ) {
+  ) {}
+
+  ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.animeId = params.id;
-
-      this.getInfo();
-      this.getCharacters();
-      this.getEpisodes();
-      this.getNews();
     });
-  }
 
-  ngOnInit(): void {}
+    this.getInfo();
+    this.getCharacters();
+    this.getEpisodes();
+    this.getNews();
+  }
 
   getInfo() {
     this.animeService.getInfo(this.animeId).subscribe(
@@ -51,7 +49,7 @@ export class DetailsComponent implements OnInit {
   getCharacters() {
     this.animeService.getCharacters(this.animeId).subscribe(
       (response) => {
-        this.characters = response.characters.slice(0, 8);
+        this.characters = response.characters.slice(0, 11);
       },
       (error) => {
         console.error(error);
@@ -62,7 +60,7 @@ export class DetailsComponent implements OnInit {
   getEpisodes() {
     this.animeService.getEpisodes(this.animeId).subscribe(
       (response) => {
-        this.episodes = response.episodes.slice(0, 5);
+        this.episodes = response.episodes;
       },
       (error) => {
         console.error(error);
@@ -74,7 +72,7 @@ export class DetailsComponent implements OnInit {
     this.animeService.getNews(this.animeId).subscribe(
       (response) => {
         console.log(response);
-        this.articles = response.articles.slice(0, 5);
+        this.news = response.articles.slice(0, 6);
       },
       (error) => {
         console.error(error);
