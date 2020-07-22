@@ -27,7 +27,6 @@ export class SeasonComponent implements OnInit {
     this.searchService.searchSeason(this.season).subscribe(
       (response) => {
         this.animes = response.anime;
-        console.log(this.animes);
       },
       (error) => {
         console.error(error);

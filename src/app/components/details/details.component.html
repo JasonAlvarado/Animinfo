@@ -16,22 +16,9 @@
   </section>
   <section>
     <app-slider
-      [title]="'Characters'"
-      *ngIf="characters"
-      [data]="characters"
+      *ngIf="animeDetails.episodes && animeDetails.characters"
+      [characters]="animeDetails.characters"
+      [episodes]="animeDetails.episodes"
     ></app-slider>
-  </section>
-  <section>
-    <app-slider [title]="'Episodes'" *ngIf="" [data]="episodes"></app-slider>
-  </section>
-  <section *ngIf="animeDetails.news">
-    <h3>News</h3>
-    <div class="row">
-      <article *ngFor="let item of animeDetails.news" class="col-6 col-md-2">
-        <a href="{{ item.url }}">
-          {{ item.title }}
-        </a>
-      </article>
-    </div>
   </section>
 </div>

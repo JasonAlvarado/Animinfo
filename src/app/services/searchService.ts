@@ -20,11 +20,6 @@ export class SearchService {
   searchAnime(animeSearch: AnimeSearchRequest): Observable<any> {
     let url: string = this.globalUrl + 'search/anime?q=' + animeSearch.name;
 
-    // if (animeSearch.status) {
-    //   url += '&status=' + animeSearch.status;
-    //   console.log(url);
-    // }
-
     return this.httpClient.get(url);
   }
 

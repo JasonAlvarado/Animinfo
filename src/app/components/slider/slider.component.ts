@@ -1,4 +1,5 @@
-import { SliderModel } from './../../models/slider/sliderModel';
+import { Episode } from './../../models/anime/episodes';
+import { Character } from './../../models/anime/animeStaff';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -7,26 +8,24 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./slider.component.css'],
 })
 export class SliderComponent implements OnInit {
-  @Input() title: string;
-  @Input() data: SliderModel[];
+  @Input() characters: Character[];
+  @Input() episodes: Episode[];
 
-  public arrays;
+  public characterArray: any[];
+  public episodeArray: any[];
 
   constructor() {
-    this.arrays = [];
+    this.characterArray = [];
+    this.episodeArray = [];
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.spliceArray();
-    }, 300);
-  }
+    while (this.characters.length > 0) {
+      this.characterArray.push(this.characters.splice(0, 12));
+    }
 
-  spliceArray() {
-    let firstItem = this.data;
-
-    while (firstItem.length > 0) {
-      this.arrays.push(firstItem.splice(0, 12));
+    while (this.episodes.length > 0) {
+      this.episodeArray.push(this.episodes.splice(0, 12));
     }
   }
 }

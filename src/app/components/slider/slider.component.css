@@ -1,4 +1,4 @@
-h3 {
+.subtitle {
   margin: 0;
   padding: 5px 0;
 
@@ -9,7 +9,22 @@ h3 {
     rgba(226, 14, 14, 0.8379726890756303) 50%,
     rgba(242, 10, 10, 0.7931547619047619) 100%
   );
+
   text-align: center;
   text-shadow: 0 0 5px #ccc;
   color: white !important;
+  border-radius: 5px;
+}
+
+.character {
+  text-align: center;
+  margin: 5px 0;
+}
+.character p {
+  height: 30px;
+  width: 100%;
+}
+
+.character img {
+  height: 200px;
 }

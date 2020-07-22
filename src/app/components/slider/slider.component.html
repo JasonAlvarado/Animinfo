@@ -1,41 +1,128 @@
-<!-- Title -->
-<div class="row">
-  <div class="col-md-1">
-    <a href="#sliderIndicator" role="button" data-slide="prev">
-      prev
-    </a>
+<!-- Characters slider -->
+<div *ngIf="characterArray.length > 0">
+  <div class="row subtitle">
+    <div class="col-md-1">
+      <a
+        class="btn btn-light"
+        href="#characterIndicator"
+        role="button"
+        data-slide="prev"
+      >
+        prev
+      </a>
+    </div>
+    <div class="col-md-10">
+      <h3>Characters</h3>
+    </div>
+    <div class="col-md-1">
+      <a
+        class="btn btn-light"
+        href="#characterIndicator"
+        role="button"
+        data-slide="next"
+      >
+        Next
+      </a>
+    </div>
   </div>
-  <div class="col-md-10">
-    <h3>{{ title }}</h3>
-  </div>
-  <div class="col-md-1">
-    <a href="#sliderIndicator" role="button" data-slide="next">
-      Next
-    </a>
-  </div>
-</div>
-<!-- Slider -->
-<div id="sliderIndicator" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="row">
-        <div *ngFor="let character of arrays[0]" class="col-6 col-md-2">
-          <div class="character">
-            <p>{{ character.name }}</p>
-            <img style="width: 100%;" src="{{ character.image }}" alt="" />
+  <div
+    id="characterIndicator"
+    class="carousel slide"
+    data-ride="carousel"
+    *ngIf="characters"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+          <div
+            *ngFor="let character of characterArray[0]"
+            class="col-6 col-md-2"
+          >
+            <div class="character">
+              <a href="{{ character.url }}">{{ character.name }}</a>
+              <img
+                style="width: 100%;"
+                src="{{ character.image_url }}"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="carousel-item"
+        *ngFor="
+          let character of characterArray.splice(1, characterArray.length)
+        "
+      >
+        <div class="row">
+          <div *ngFor="let item of character" class="col-6 col-md-2">
+            <div class="character">
+              <a href="{{ item.url }}">{{ item.name }}</a>
+              <img style="width: 100%;" src="{{ item.image_url }}" alt="" />
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div
-      class="carousel-item"
-      *ngFor="let item of arrays.splice(1, arrays.length)"
-    >
-      <div class="row">
-        <div *ngFor="let character of item" class="col-6 col-md-2">
-          <div class="character">
-            <p>{{ character.name }}</p>
-            <img style="width: 100%;" src="{{ character.image }}" alt="" />
+  </div>
+</div>
+<!-- episodes slider -->
+<div *ngIf="episodeArray.length > 0">
+  <div class="row subtitle">
+    <div class="col-md-1">
+      <a
+        class="btn btn-light"
+        href="#episodeIndicator"
+        role="button"
+        data-slide="prev"
+      >
+        prev
+      </a>
+    </div>
+    <div class="col-md-10">
+      <h3>Episodes</h3>
+    </div>
+    <div class="col-md-1">
+      <a
+        class="btn btn-light"
+        href="#episodeIndicator"
+        role="button"
+        data-slide="next"
+      >
+        Next
+      </a>
+    </div>
+  </div>
+  <div
+    id="episodeIndicator"
+    class="carousel slide"
+    data-ride="carousel"
+    *ngIf="episodes"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+          <div *ngFor="let episode of episodeArray[0]" class="col-6 col-md-2">
+            <div class="character">
+              <a href="{{ episode.video_url }}"
+                >{{ episode.episode_id }}. {{ episode.title }}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="carousel-item"
+        *ngFor="let episode of episodeArray.splice(1, episodeArray.length)"
+      >
+        <div class="row">
+          <div *ngFor="let info of episode" class="col-6 col-md-2">
+            <div class="character">
+              <a href="{{ info.video_url }}"
+                >{{ info.episode_id }} {{ info.title }}</a
+              >
+            </div>
           </div>
         </div>
       </div>
