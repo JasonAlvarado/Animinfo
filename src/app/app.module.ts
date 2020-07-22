@@ -14,9 +14,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ErrorComponent } from './components/error/error.component';
 import { GenreComponent } from './components/genre/genre.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, DetailsComponent, AnimeComponent, SeasonComponent, AnimeListComponent, HeaderComponent, FooterComponent, ErrorComponent, GenreComponent],
+  declarations: [AppComponent, HomeComponent, DetailsComponent, AnimeComponent, SeasonComponent, AnimeListComponent, HeaderComponent, FooterComponent, ErrorComponent, GenreComponent, SliderComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule, routing],
   providers: [],
   bootstrap: [AppComponent],

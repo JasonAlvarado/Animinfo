@@ -1,6 +1,8 @@
-import { Article } from './../../models/anime/article';
-import { Episode } from './../../models/anime/episodes';
-import { Character } from './../../models/anime/animeStaff';
+import { SliderModel } from './../../models/slider/sliderModel';
+import { AnimeDetails } from './../../models/anime/animeDetails';
+// import { Article } from './../../models/anime/article';
+// import { Episode } from './../../models/anime/episodes';
+// import { Character } from './../../models/anime/animeStaff';
 import { Anime } from './../../models/anime/anime';
 import { AnimeService } from './../../services/anime.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,14 +17,20 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailsComponent implements OnInit {
   public animeId: number;
   public anime: Anime;
-  public characters: Character[];
-  public episodes: Episode[];
-  public news: Article[];
+  public animeDetails: AnimeDetails;
+  public characters: SliderModel[];
+  public episodes: SliderModel[];
+
+  public pageSection: string;
 
   constructor(
     private animeService: AnimeService,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    this.characters = [];
+    this.animeDetails = new AnimeDetails();
+    this.pageSection = 'Characters';
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -31,7 +39,7 @@ export class DetailsComponent implements OnInit {
 
     this.getInfo();
     this.getCharacters();
-    this.getEpisodes();
+    // this.getEpisodes();
     this.getNews();
   }
 
@@ -46,10 +54,32 @@ export class DetailsComponent implements OnInit {
     );
   }
 
+  getNews() {
+    this.animeService.getNews(this.animeId).subscribe(
+      (response) => {
+        this.animeDetails.news = response.articles.slice(0, 6);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
   getCharacters() {
     this.animeService.getCharacters(this.animeId).subscribe(
       (response) => {
-        this.characters = response.characters.slice(0, 11);
+        this.animeDetails.characters = response.characters;
+
+        this.animeDetails.characters.forEach((element) => {
+          this.characters.push(
+            new SliderModel(
+              element.mal_id,
+              element.name,
+              element.url,
+              element.image_url
+            )
+          );
+        });
       },
       (error) => {
         console.error(error);
@@ -60,19 +90,7 @@ export class DetailsComponent implements OnInit {
   getEpisodes() {
     this.animeService.getEpisodes(this.animeId).subscribe(
       (response) => {
-        this.episodes = response.episodes;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }
-
-  getNews() {
-    this.animeService.getNews(this.animeId).subscribe(
-      (response) => {
-        console.log(response);
-        this.news = response.articles.slice(0, 6);
+        this.animeDetails.episodes = response.episodes;
       },
       (error) => {
         console.error(error);

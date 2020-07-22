@@ -1,5 +1,5 @@
+import { Anime } from './../../models/anime/anime';
 import { AnimeSearchRequest } from './../../models/search/animeSearch';
-import { Anime } from './../../models/anime/top';
 import { Component, OnInit } from '@angular/core';
 import { AnimeService } from './../../services/anime.service';
 import { SearchService } from './../../services/searchService';

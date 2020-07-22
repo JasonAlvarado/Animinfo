@@ -1,3 +1,7 @@
+h1 {
+  font-size: 30px;
+}
+
 .anime-title {
   font-size: 26px;
   text-align: center;
@@ -9,31 +13,19 @@
 
 .anime-image {
   text-align: center;
+  width: 100%;
 }
 
 section {
   margin: 10px 0;
 }
 
-section h3 {
-  margin: 0;
-  padding: 0;
-
-  background: rgb(227, 134, 12);
-  background: radial-gradient(
-    circle,
-    rgba(227, 134, 12, 0.9108018207282913) 0%,
-    rgba(226, 14, 14, 0.8379726890756303) 50%,
-    rgba(242, 10, 10, 0.7931547619047619) 100%
-  );
-  text-align: center;
-  text-shadow: 0 0 5px #ccc;
-  color: white !important;
-}
-
 .character {
   text-align: center;
   margin: 5px 0;
+}
+.character p {
+  height: 30px;
 }
 
 .character img {
@@ -59,4 +51,27 @@ section h3 {
   text-align: justify;
   overflow: hidden;
   margin-bottom: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 80px;
+  width: 80px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after {
+  content: ">";
+  font-size: 55px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  content: "<";
+  font-size: 55px;
+  color: red;
 }

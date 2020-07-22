@@ -1,5 +1,5 @@
 .presentation {
-  height: 350px;
+  height: 900px;
   text-align: center;
 
   background: rgb(227, 134, 12);
@@ -11,31 +11,31 @@
   );
 }
 
-.carousel-item img {
-  height: 350px;
-}
-
-.image-wrapper {
+.presentation h1 {
+  color: white;
+  text-shadow: 0 0 5px grey;
+  padding-top: 320px;
   text-align: center;
 }
 
-.image-wrapper img {
-  width: 100%;
-}
-
-.page-description {
-  display: block;
-  padding-top: 130px;
+.presentation h3 {
+  text-align: center;
   color: white;
+  width: 50%;
+  margin: 25px auto;
 }
 
-.page-description a {
-  text-decoration: none;
-  padding: 5px 10px;
-  background: white;
+.presentation a {
+  text-align: center;
+  display: inline-block;
+  font-size: 1em;
   color: black;
-  box-shadow: 0 0 5px #ccc;
-  margin: 5%;
-  border-radius: 8px;
-  width: 40%;
+  text-decoration: none;
+  background: white;
+  padding: 10px 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px grey;
+  width: 16%;
+  margin: 2%;
+  margin-top: 20px;
 }
