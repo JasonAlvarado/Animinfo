@@ -1,3 +1,4 @@
+import { Genre } from './../models/search/genre';
 import { AnimeSearchRequest } from './../models/search/animeSearch';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -25,6 +26,12 @@ export class SearchService {
 
   searchSeason(season: SeasonSearch): Observable<any> {
     let url = this.globalUrl + 'season/' + season.year + '/' + season.name;
+
+    return this.httpClient.get(url);
+  }
+
+  searchByGenre(genre: number, page: number): Observable<any> {
+    let url = this.globalUrl + 'genre/anime/' + genre + '/' + page;
 
     return this.httpClient.get(url);
   }

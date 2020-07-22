@@ -20,12 +20,14 @@ export class SliderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    while (this.characters.length > 0) {
-      this.characterArray.push(this.characters.splice(0, 12));
-    }
+    setTimeout(() => {
+      while (this.characters.length > 0) {
+        this.characterArray.push(this.characters.splice(0, 12));
+      }
 
-    while (this.episodes.length > 0) {
-      this.episodeArray.push(this.episodes.splice(0, 12));
-    }
+      while (this.episodes.length > 0) {
+        this.episodeArray.push(this.episodes.splice(0, 12));
+      }
+    }, 1200);
   }
 }

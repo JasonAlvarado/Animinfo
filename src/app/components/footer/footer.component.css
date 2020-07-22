@@ -6,6 +6,8 @@ footer {
   margin-bottom: 0px;
 }
 
-footer p {
+footer a {
   margin: 0;
+  text-decoration: none;
+  color: white;
 }
