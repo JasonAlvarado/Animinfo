@@ -1,5 +1,5 @@
+<h1 class="title">Top Animes</h1>
 <div class="container">
-  <h1 class="page-title">Top Animes</h1>
   <form
     name="animeSearch"
     #searchForm="ngForm"
@@ -28,15 +28,15 @@
           name="status"
           id="status"
         >
-          <option *ngFor="let stat of status" value="{{ stat }}">{{
-            stat
-          }}</option>
+          <option *ngFor="let stat of status" value="{{ stat }}">
+            {{ stat }}
+          </option>
         </select>
       </div>
     </div>
     <div class="col-sm-12 col-md-2">
       <input
-        style="margin-top: 41px;"
+        style="margin-top: 41px"
         class="btn btn-danger"
         type="submit"
         value="Search"

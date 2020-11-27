@@ -1,6 +1,6 @@
 import { Genre } from './genre';
 
-export let GenreList = [
+export var GenreList = [
   new Genre('Action', 1),
   new Genre('Adventure', 2),
   new Genre('Cars', 3),

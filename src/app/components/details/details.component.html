@@ -1,24 +1,25 @@
 <div class="container">
   <section>
-    <h1 class="page-title">{{ anime.title }}</h1>
+    <h1 *ngIf="anime?.title" class="page-title">{{ anime?.title }}</h1>
     <div class="row">
       <div class="col-12 col-md-2">
         <img
-          src="{{ anime.image_url }}"
+          *ngIf="anime?.image_url"
+          src="{{ anime?.image_url }}"
           alt="{{ anime.title }}"
           style="width: 100%;"
         />
       </div>
       <div class="col-sm-12 col-md-10">
-        <p class="anime-synopsis">{{ anime.synopsis }}</p>
+        <p *ngIf="anime?.synopsis" class="anime-synopsis">
+          {{ anime.synopsis }}
+        </p>
       </div>
     </div>
   </section>
-  <section>
-    <app-slider
-      *ngIf="animeDetails.episodes && animeDetails.characters"
-      [characters]="animeDetails.characters"
-      [episodes]="animeDetails.episodes"
-    ></app-slider>
-  </section>
+  <app-slider
+    *ngIf="animeDetails.episodes && animeDetails.characters"
+    [characters]="animeDetails.characters"
+    [episodes]="animeDetails.episodes"
+  ></app-slider>
 </div>

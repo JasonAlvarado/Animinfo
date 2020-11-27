@@ -1,16 +1,25 @@
 import { Episode } from './../../models/anime/episodes';
 import { Character } from './../../models/anime/animeStaff';
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ViewChild,
+  AfterViewInit,
+} from '@angular/core';
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent implements OnInit, AfterViewInit {
   @Input() characters: Character[];
   @Input() episodes: Episode[];
 
+  // @ViewChild('.carousel-inner') slides;
+
+  // TO DO use same declartaion for items
   public characterArray: any[];
   public episodeArray: any[];
 
@@ -28,6 +37,12 @@ export class SliderComponent implements OnInit {
       while (this.episodes.length > 0) {
         this.episodeArray.push(this.episodes.splice(0, 12));
       }
-    }, 1200);
+    }, 2000);
+  }
+
+  ngAfterViewInit() {
+    // var sliderItems = document.getElementsByClassName('carousel-item');
+    // console.log(sliderItems);
+    // console.log(this.slides);
   }
 }

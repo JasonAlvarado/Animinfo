@@ -1,3 +1,4 @@
+import { ApiService } from './services/apiService';
 import { routing } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +20,7 @@ import { SliderComponent } from './components/slider/slider.component';
 @NgModule({
   declarations: [AppComponent, HomeComponent, DetailsComponent, AnimeComponent, SeasonComponent, AnimeListComponent, HeaderComponent, FooterComponent, ErrorComponent, GenreComponent, SliderComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule, routing],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

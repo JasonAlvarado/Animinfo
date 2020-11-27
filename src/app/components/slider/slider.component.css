@@ -1,4 +1,4 @@
-.subtitle {
+.section-title {
   margin: 0;
   padding: 5px 0;
 
@@ -12,8 +12,8 @@
 
   text-align: center;
   text-shadow: 0 0 5px #ccc;
-  color: white !important;
   border-radius: 5px;
+  height: 50px;
 }
 
 .character {
@@ -27,4 +27,18 @@
 
 .character img {
   height: 200px;
+}
+
+.section-title a {
+  width: 10%;
+  float: left;
+  height: 40px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.section-title h3 {
+  float: left;
+  width: 80%;
+  margin: 0;
 }
