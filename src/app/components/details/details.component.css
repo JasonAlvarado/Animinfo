@@ -47,3 +47,13 @@ section {
   overflow: hidden;
   margin-bottom: 10px;
 }
+
+.title {
+  color: #000140;
+  text-align: center;
+}
+
+.btn {
+  background-color: #000140;
+  color: white;
+}

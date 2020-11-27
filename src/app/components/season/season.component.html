@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="page-title">Seasons</h1>
+  <h1 class="title">Seasons</h1>
   <form #seasonForm="ngForm" (ngSubmit)="searchBySeason()">
     <div class="row">
       <div class="col-md-5">
@@ -22,17 +22,17 @@
             name="season"
             id=""
           >
-            <option *ngFor="let item of seasons" value="{{ item }}">{{
-              item
-            }}</option>
+            <option *ngFor="let item of seasons" value="{{ item }}">
+              {{ item }}
+            </option>
           </select>
         </div>
       </div>
       <div class="col-md-2">
         <br />
         <input
-          style="margin-top: 8px;"
-          class="form-control btn btn-danger"
+          style="margin-top: 8px"
+          class="form-control btn"
           type="submit"
           value="Search"
         />

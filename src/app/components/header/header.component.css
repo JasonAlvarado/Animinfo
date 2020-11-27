@@ -1,4 +1,25 @@
 header {
-  border-top: 5px solid #000140;
   margin-bottom: 10px;
+  background: #000140;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  font-weight: bolder;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.navbar-brand:hover {
+  color: white;
+  font-weight: bolder;
+}
+
+.navbar {
+  margin-bottom: 1px solid white;
 }

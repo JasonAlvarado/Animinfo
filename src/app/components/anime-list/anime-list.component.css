@@ -11,7 +11,7 @@
 .anime {
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 1px solid darkred;
+  border: 1px solid #000140;
   border-radius: 6px;
   padding: 5px 20px;
   height: 450px;
@@ -31,4 +31,9 @@
 .title {
   height: 50px;
   overflow: hidden;
+}
+
+.btn {
+  background-color: #000140;
+  color: white;
 }

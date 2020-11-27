@@ -1,13 +1,13 @@
 <div class="container">
   <section>
-    <h1 *ngIf="anime?.title" class="page-title">{{ anime?.title }}</h1>
+    <h1 *ngIf="anime?.title" class="title">{{ anime?.title }}</h1>
     <div class="row">
       <div class="col-12 col-md-2">
         <img
           *ngIf="anime?.image_url"
           src="{{ anime?.image_url }}"
           alt="{{ anime.title }}"
-          style="width: 100%;"
+          style="width: 100%"
         />
       </div>
       <div class="col-sm-12 col-md-10">
